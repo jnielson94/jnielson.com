@@ -5,6 +5,7 @@ title: 'Getting Started with the gatsby-eggheadio-blog-starter'
 description: 'Notes from when I was getting this site set up with a blog'
 author: 'Jordan Nielson'
 published: true
+banner: './banner.png'
 ---
 
 The [gatsby-starter-egghead-blog](https://github.com/eggheadio/gatsby-starter-egghead-blog) was recommended to me by [@chrisbiscardi](https://twitter.com/chrisbiscardi) as an option that is the most ["batteries included" blog starter](https://twitter.com/chrisbiscardi/status/1109614914073575424). I was tempted to start with a theme approach, but realized that I eventually wanted to be able to dig into the gatsby internals and learn more about them. Taking that into consideration, the starter (boilerplate) was much more appealing for getting up and running quickly.
@@ -35,3 +36,5 @@ The rest of this post will be some notes that I took throughout getting started 
 - While I was in the Header file, I found that there was a commented out link to the "Blog Page" which lists all the blogs. That sounded like something I would want on, so I uncommented it and it works wonderfully.
 
 - On a side note, I tried to get this going in CodeSandbox, but ran into an issue where it was telling me that my server-side sandbox was out of space, resulting in the yarn install failing. I didn't want to take the time to look into it, since I could just push it up to github and clone it locally.
+
+- You'll also want to adjust the favicons so that they aren't egghead (unless you just love egghead!). I utilized [vectr.com](https://vectr.com/) to create a favicon image, and then [realfavicongenerator.net](https://realfavicongenerator.net/) to generate the different files needed - and it looked to pretty well replace what was already here!
