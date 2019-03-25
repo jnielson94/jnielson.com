@@ -1,0 +1,36 @@
+---
+slug: getting-started
+date: 2019-03-24
+title: 'Getting Started with the gatsby-eggheadio-blog-starter'
+description: 'Notes from when I was getting this site set up with a blog'
+author: 'Jordan Nielson'
+published: true
+---
+
+The [gatsby-starter-egghead-blog](https://github.com/eggheadio/gatsby-starter-egghead-blog) was recommended to me by [@chrisbiscardi](https://twitter.com/chrisbiscardi) as an option that is the most ["batteries included" blog starter](https://twitter.com/chrisbiscardi/status/1109614914073575424). I was tempted to start with a theme approach, but realized that I eventually wanted to be able to dig into the gatsby internals and learn more about them. Taking that into consideration, the starter (boilerplate) was much more appealing for getting up and running quickly.
+
+The rest of this post will be some notes that I took throughout getting started with this setup.
+
+### Getting Started Notes
+
+- Edit `./config/website` in order to replace the metadata with your information
+  - Will require a restart of the dev server in order to reflect some config changes
+  - googleAnalyticsID -> Check out this post for information on how to only have analytics in production, by [Chase Adams](https://chaseonsoftware.com/netlify-gatsby-analytics/)
+- `./config/theme` has a series of pre-selected primary color options that look good
+- `./content/blog` contains a bunch of demo posts that you'll probably want to delete
+  - Make sure to leave the frontmatter-placeholder folder as it contains an example of each frontmatter that is expected to exist
+- `./src/components/mdx/{Title,Subtitle}.js` - I chose to edit these and adjust the fontSize to be rem values - 2rem and 1.5rem specifically, in order to better fit in with the typography scale
+- If you, like me, didn't want to pay for convertkit without having content to email out, then you'll want to adjust the logic in the `handleSubmit` function for the form under `./src/components/Forms/Subscribe.js` to change what happens when someone submits.
+- There was a warning in the console on startup that said:
+
+> `warning The GraphQL query in the non-page component "./src/components/Header.js" will not be run.`
+
+> `Exported queries are only executed for Page components. It's possible you're trying to create pages in your gatsby-node.js and that's failing for some reason.`
+
+> `If the failing component(s) is a regular component and not intended to be a page component, you generally want to use a <StaticQuery> (https://gatsbyjs.org/docs/static-query) instead of exporting a page query.`
+
+In order to fix this one, I opened up the Header component it mentioned, and found that it was indeed exporting a `pageQuery`, so I looked up `gatsby staticquery` as the warning mentioned and found [these docs](https://www.gatsbyjs.org/docs/static-query/). A little ways down it mentioned that there's a hook for that, which sounded good to me! Here's [the docs](https://www.gatsbyjs.org/docs/use-static-query/). Conveniently their example is about a Header, which made it super easy to transition from a pageQuery to getting the data with a hook.
+
+- While I was in the Header file, I found that there was a commented out link to the "Blog Page" which lists all the blogs. That sounded like something I would want on, so I uncommented it and it works wonderfully.
+
+## Working with the starter
