@@ -29,8 +29,9 @@ The rest of this post will be some notes that I took throughout getting started 
 
 > `If the failing component(s) is a regular component and not intended to be a page component, you generally want to use a <StaticQuery> (https://gatsbyjs.org/docs/static-query) instead of exporting a page query.`
 
-In order to fix this one, I opened up the Header component it mentioned, and found that it was indeed exporting a `pageQuery`, so I looked up `gatsby staticquery` as the warning mentioned and found [these docs](https://www.gatsbyjs.org/docs/static-query/). A little ways down it mentioned that there's a hook for that, which sounded good to me! Here's [the docs](https://www.gatsbyjs.org/docs/use-static-query/). Conveniently their example is about a Header, which made it super easy to transition from a pageQuery to getting the data with a hook.
+
+- In order to fix this one, I opened up the Header component it mentioned, and found that it was indeed exporting a `pageQuery`, so I looked up `gatsby staticquery` as the warning mentioned and found [these docs](https://www.gatsbyjs.org/docs/static-query/). A little ways down it mentioned that there's a hook for that, which sounded good to me! Here's [the docs](https://www.gatsbyjs.org/docs/use-static-query/). Conveniently their example is about a Header, which made it super easy to transition from a pageQuery to getting the data with a hook.
 
 - While I was in the Header file, I found that there was a commented out link to the "Blog Page" which lists all the blogs. That sounded like something I would want on, so I uncommented it and it works wonderfully.
 
-## Working with the starter
+- On a side note, I tried to get this going in CodeSandbox, but ran into an issue where it was telling me that my server-side sandbox was out of space, resulting in the yarn install failing. I didn't want to take the time to look into it, since I could just push it up to github and clone it locally.

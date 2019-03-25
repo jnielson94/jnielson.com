@@ -1,9 +1,10 @@
 {
+  "version": 1,
   "env": {
-    "GOOGLE_ANALYTICS": "GA_GOES_HERE",
+    "GOOGLE_ANALYTICS": "UA-136874328-1",
     "NODE_ENV": "production"
   },
-  "alias": "DOMAIN_GOES_HERE",
+  "alias": "jnielson.com",
   "scale": {
     "sfo1": {
       "min": 1,
