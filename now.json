@@ -1,17 +1,22 @@
 {
-  "version": 1,
   "env": {
     "GOOGLE_ANALYTICS": "UA-136874328-1",
     "NODE_ENV": "production"
   },
-  "alias": "jnielson.com",
-  "scale": {
-    "sfo1": {
-      "min": 1,
-      "max": "auto"
+  "alias": ["jnielson.com", "www.jnielson.com"],
+  "name": "jnielson.com",
+  "version": 2,
+  "regions": ["sfo1", "gru1", "bru1"],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
     }
-  },
-  "static": {
-    "trailingSlash": false
-  }
+  ],
+  "routes": [
+    {"src": "^/public/static/(.*)", "headers": {"cache-control": "public,max-age=31536000,immutable"} },
+    {"src": "^/(.*).(css|js)", "headers": {"cache-control": "public,max-age=31536000,immutable"} },
+    {"src": "^/(.*).html", "headers": {"cache-control": "public,max-age=0,must-revalidate"} }
+  ]
 }

@@ -1,5 +1,4 @@
 const config = require('./config/website')
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -8,11 +7,11 @@ require('dotenv').config({
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
-    siteUrl: config.siteUrl + pathPrefix,
+    siteUrl: config.siteUrl + config.pathPrefix,
     title: config.siteTitle,
     twitterHandle: config.twitterHandle,
     description: config.siteDescription,
-    keywords: ['Video Blogger'],
+    keywords: ['Blogger'],
     canonicalUrl: config.siteUrl,
     image: config.siteLogo,
     author: {
