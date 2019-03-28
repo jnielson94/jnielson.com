@@ -1,8 +1,8 @@
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/blog your pathPrefix should be "blog"
-  siteTitle: 'Diving Deep and Flying High', // Navigation and Site Title
-  siteTitleAlt: 'The blog of Jordan Nielson', // Alternative Site title for SEO
-  siteTitleShort: 'Jordan Blog', // short_name for manifest
+  siteTitle: 'Jordan Nielson', // Navigation and Site Title
+  siteTitleAlt: 'The personal blog of Jordan Nielson', // Alternative Site title for SEO
+  siteTitleShort: 'Jordan Nielson - Blog', // short_name for manifest
   siteUrl: 'https://jnielson.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: 'images/logo.png', // Used for SEO and manifest, path to your image you placed in the 'static' folder
@@ -12,7 +12,7 @@ module.exports = {
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@jnielson94', // Twitter Username
-  ogSiteName: 'Jordan Nielson egghead.io Gatsby Starter Blog', // Facebook Site Name
+  ogSiteName: 'Jordan Nielson - Blog', // Facebook Site Name
   ogLanguage: 'en_US',
   googleAnalyticsID: 'UA-136874328-1',
 

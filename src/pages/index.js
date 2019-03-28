@@ -35,7 +35,7 @@ const Hero = () => (
           max-width: ${rhythm(15)};
         `}
       >
-        Diving Deep and Flying High
+        jnielson.com
       </h1>
       <h2
         css={css`
@@ -46,7 +46,7 @@ const Hero = () => (
           max-width: ${rhythm(15)};
         `}
       >
-        Jordan Nielson - Personal Blog
+        Personal Blog
       </h2>
     </Container>
     <div

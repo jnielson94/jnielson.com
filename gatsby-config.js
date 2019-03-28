@@ -17,9 +17,8 @@ module.exports = {
     author: {
       name: config.author,
       minibio: `
-        <strong>egghead</strong> is the premier place on the internet for 
-        experienced developers to enhance their skills and stay current
-        in the fast-faced field of web development.
+        Jordan Nielson is a husband, father, software developer, 
+        and member of The Church of Jesus Christ of Latter-day Saints. 
       `,
     },
     organization: {
