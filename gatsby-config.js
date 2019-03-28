@@ -152,6 +152,6 @@ module.exports = {
         pathToConfigModule: `src/lib/typography`,
       },
     },
-    'gatsby-plugin-offline',
+    'gatsby-plugin-remove-serviceworker',
   ],
 }

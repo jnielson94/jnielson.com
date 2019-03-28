@@ -47,7 +47,7 @@ const Header = ({ dark, bgColor = 'none', headerColor = 'black' }) => {
           `}
         >
           <Link to="/" aria-label="go to homepage" activeClassName="active">
-            {siteTitle}
+            Home of {siteTitle}
           </Link>
           <div
             css={css`

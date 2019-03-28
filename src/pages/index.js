@@ -35,8 +35,19 @@ const Hero = () => (
           max-width: ${rhythm(15)};
         `}
       >
-        Your blog says the things you want to say.
+        Diving Deep and Flying High
       </h1>
+      <h2
+        css={css`
+          position: relative;
+          z-index: 5;
+          line-height: 1.5;
+          margin: 0;
+          max-width: ${rhythm(15)};
+        `}
+      >
+        Jordan Nielson's Personal Blog
+      </h2>
     </Container>
     <div
       css={css`
