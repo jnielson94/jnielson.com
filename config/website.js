@@ -6,7 +6,7 @@ module.exports = {
   siteUrl: 'https://jnielson.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: 'images/logo.png', // Used for SEO and manifest, path to your image you placed in the 'static' folder
-  siteDescription: 'This is where I post things!',
+  siteDescription: 'The personal blog of Jordan Nielson',
   author: 'Jordan Nielson', // Author for schemaORGJSONLD
   organization: 'The Church of Jesus Christ of Latter-day Saints',
 
