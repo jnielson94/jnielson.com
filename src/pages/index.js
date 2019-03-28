@@ -46,7 +46,7 @@ const Hero = () => (
           max-width: ${rhythm(15)};
         `}
       >
-        Jordan Nielson's Personal Blog
+        Jordan Nielson - Personal Blog
       </h2>
     </Container>
     <div
