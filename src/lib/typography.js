@@ -28,6 +28,7 @@ const typography = new Typography({
     },
     h3: {
       color: 'hsla(0,0%,0%,0.8)',
+      fontSize: '1.25rem',
     },
     'h1,h2,h3,h4,h5,h6': {
       lineHeight: 1,
