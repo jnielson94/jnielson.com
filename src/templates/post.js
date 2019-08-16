@@ -12,7 +12,7 @@ import config from '../../config/website'
 import { bpMaxSM } from '../lib/breakpoints'
 
 export default function Post({
-  data: { site, mdx },
+  data: { site, mdx = { frontmatter: {} } },
   pageContext: { next, prev },
 }) {
   const author = mdx.frontmatter.author || config.author
