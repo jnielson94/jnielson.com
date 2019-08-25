@@ -1,4 +1,9 @@
-# egghead.io creator MDX Blog Starter Project
+# Jnielson.com
+
+This repository contains the code, content, and all other assets used in jnielson.com. As it is MIT licensed, you could utilize it, but I would appreciate you keeping the copyright notice that I added in addition to the Gatsby one. Either that or attribute me somehow. If you do use this, feel free to let me know things that could be improved/changed!
+
+
+Originally bootstrapped using the egghead.io creator MDX Blog Starter Project. At time of creation it had the following README file:
 
 This is based on Robin Wieruch's https://github.com/rwieruch/gatsby-mdx-blog-starter-project
 
