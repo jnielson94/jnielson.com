@@ -57,7 +57,13 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "babel-preset-gatsby": "^0.1.6",
+    "eslint": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
     "prettier": "^1.16.4"
   },
   "keywords": [
