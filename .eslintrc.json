@@ -1,0 +1,30 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "parser": "babel-eslint",
+  "plugins": ["import", "react", "jsx-a11y", "react-hooks"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

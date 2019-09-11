@@ -2,11 +2,17 @@ const fs = require('fs')
 const slugify = require('slug')
 const dateFns = require('date-fns')
 const title = process.argv[2]
+const publishDate = process.argv[3]
 if (!title) {
   throw 'a title is required!'
 }
 const slug = slugify(title.toLowerCase())
-const date = dateFns.format(new Date(), 'YYYY-MM-DD')
+if (publishDate && publishDate.length !== 10) {
+  throw 'Publish date should be YYYY-MM-DD'
+}
+const date = publishDate
+  ? publishDate
+  : dateFns.format(new Date(), 'YYYY-MM-DD')
 const dir = `./content/blog/${date}-${slug}`
 if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir)
