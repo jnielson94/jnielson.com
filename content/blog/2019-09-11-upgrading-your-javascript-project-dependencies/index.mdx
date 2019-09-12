@@ -120,14 +120,7 @@ people might find updating every sprint to be overkill, but I'd suggest that
 it's better to have a small update reguarly instead of waiting until there's a
 large amount of updates.
 
-In a different case you have the applications that are worked on "every so
-often" when there's a major bug or some feature that needs to be added/adjusted.
-In this case, I find it best to check for updates but not actually do them
-unless they're minor and easy. Then, once you've got an update that looks
-useful/major/helpful add a task to do it and test after. In the case of
-applications that aren't worked on often, I've also seen that there's very few
-resources available to test that it still works and that makes updating really
-difficult. More on that later.
+In a different case you have the applications that are worked on "every so often" when there's a major bug or some feature that needs to be added/adjusted. In this case, I find it best to check for updates but not actually do them unless they're minor and easy to verify. In the case of projects like this I tend to let updates build up a little bit, so that once you've got enough updates that look useful/major/helpful you can add a task to do the updates with a full verification that things are still working after. Ideally you'd have written automated tests that can be used to speed up that verification, but I haven't seen many projects that actually do that effectively.
 
 For libraries I've found that as often as there are updates to dependencies it's
 worth at least looking into updating to use it. In most cases there's benefit to
