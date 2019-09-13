@@ -1,5 +1,5 @@
 import React from 'react'
-import { pageQuery } from '@eggheadio/gatsby-theme-egghead-blog/src/pages/index'
+import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import Layout from '@eggheadio/gatsby-theme-egghead-blog/src/components/Layout'
@@ -56,9 +56,6 @@ const MyIndex = ({ data: { site, allMdx } }) => {
             </Description>
           </div>
         ))}
-        <Link to="/blog" aria-label="Visit blog page">
-          View all articles
-        </Link>
         <hr />
       </Container>
     </Layout>
@@ -66,4 +63,49 @@ const MyIndex = ({ data: { site, allMdx } }) => {
 }
 
 export default MyIndex
-export { pageQuery }
+
+export const pageQuery = graphql`
+  query {
+    site {
+      ...site
+      siteMetadata {
+        title
+      }
+    }
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { ne: false } } }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 190)
+          id
+          fields {
+            title
+            slug
+            date
+          }
+          parent {
+            ... on File {
+              sourceInstanceName
+            }
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            description
+            banner {
+              childImageSharp {
+                sizes(maxWidth: 720) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+            slug
+            keywords
+          }
+        }
+      }
+    }
+  }
+`
