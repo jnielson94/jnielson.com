@@ -17,12 +17,12 @@ module.exports = {
   googleAnalyticsID: 'UA-136874328-1',
 
   // Manifest and Progress color
-  themeColor: '#5348FF',
-  backgroundColor: '#2b2e3c',
+  themeColor: '#1ABC9C',
+  backgroundColor: '#fafafa',
 
   // Social component
-  twitter: 'https://twitter.com/jnielson01/',
+  twitterUrl: 'https://twitter.com/jnielson01/',
   twitterHandle: '@jnielson01',
   github: 'https://github.com/jnielson94/',
-  linkedin: '',
+  githubHandle: 'jnielson94',
 }
