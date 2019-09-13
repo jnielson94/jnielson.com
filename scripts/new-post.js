@@ -12,7 +12,7 @@ if (publishDate && publishDate.length !== 10) {
 }
 const date = publishDate
   ? publishDate
-  : dateFns.format(new Date(), 'YYYY-MM-DD')
+  : dateFns.format(new Date(), 'yyyy-MM-dd')
 const dir = `./content/blog/${date}-${slug}`
 if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir)
