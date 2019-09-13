@@ -69,7 +69,7 @@ include things like the following:
 - Keeping up with major changes to make future updates easier
 
 In my experience, the number one reason to update is to receive bug fixes. In
-pretty much every release of the libraries I follow there's at least some sort
+pretty much every release of the libraries I follow there are at least some sort
 of bug being fixed, even if it doesn't impact me right then. Related to bug
 fixes are the important security patches, which are occasionally back-ported but
 more often you just need to be on the latest version in order to get them.
@@ -96,12 +96,18 @@ your stories, but there are cases that it doesn't work for. In cases like that,
 being on the latest version of the library ensures that you can receive the best
 support since that's the targeted upgrade path they've been working on.
 
+From the above cases, you can see that there are some huge upsides to using
+popular and stable libraries that try to minimize breaking changes. They're
+motivated to keep people on the latest version, and so they provide tools to
+make upgrading easier or change things less drastically since drastic changes
+make for harder upgrades!
+
 ## How often?
 
 Now that you've been convinced that you should update (and if you're not
 convinced, reach out to me with suggestions on how I could improve that
 section), how often do you update things? Well, it really depends on your
-project! From what I've seen, there's about 4 categories you could split into:
+project! From what I've seen, there are about 4 categories you could split into:
 
 1. Active development applications
 2. Maintenance ("every so often") applications
@@ -117,15 +123,23 @@ application right before releasing things. In other words, if you update early
 in a cycle you can spend some time to fix things that crop up instead of trying
 to do it late in a cycle and having to rollback if you run into any issues. Some
 people might find updating every sprint to be overkill, but I'd suggest that
-it's better to have a small update reguarly instead of waiting until there's a
+it's better to have a small update reguarly instead of waiting until there are a
 large amount of updates.
 
-In a different case you have the applications that are worked on "every so often" when there's a major bug or some feature that needs to be added/adjusted. In this case, I find it best to check for updates but not actually do them unless they're minor and easy to verify. In the case of projects like this I tend to let updates build up a little bit, so that once you've got enough updates that look useful/major/helpful you can add a task to do the updates with a full verification that things are still working after. Ideally you'd have written automated tests that can be used to speed up that verification, but I haven't seen many projects that actually do that effectively.
+In a different case you have the applications that are worked on "every so
+often" when there's a major bug or some feature that needs to be added/adjusted.
+In this case, I find it best to check for updates but not actually do them
+unless they're minor and easy to verify. In the case of projects like this I
+tend to let updates build up a little bit, so that once you've got enough
+updates that look useful/major/helpful you can add a task to do the updates with
+a full verification that things are still working after. Ideally you'd have
+written automated tests that can be used to speed up that verification, but I
+haven't seen many projects that actually do that effectively.
 
 For libraries I've found that as often as there are updates to dependencies it's
-worth at least looking into updating to use it. In most cases there's benefit to
-updating and releasing a version since those updates will include bug fixes that
-you might not have run into but your consumers might.
+worth at least looking into updating to use it. In most cases there is benefit
+to updating and releasing a version since those updates will include bug fixes
+that you might not have run into but your consumers might.
 
 The last category of suggestion that I've found is inactive side projects, or
 things that are worked on so in-frequently that there isn't even a system in
@@ -158,16 +172,48 @@ check with `npm show [package]` or similar going through your dependencies one
 by one to check for a newer version and update to it. In my opinion, this is a
 case where automation can really shine though, so embrace it!
 
+For the `npm-check` tool (the one I use most frequently), if you use it with
+`npx npm-check -u` in your project, the output would look something like this if
+you have no updates:
+
+![npm-check no updates output](npm-check-no-updates.png)
+
+If you have a few updates it would look something like this:
+
+![npm-check a few updates output](npm-check-few-updates.png)
+
+While if you have a lot of updates it provides some nice pagination for you:
+
+![npm-check many updates output](npm-check-many-updates.png)
+
+In the case of the minor and patch updates that it splits out for you, those are
+usually pretty safe if the libraries you use follow `semver`. If they don't that
+makes things more difficult, but most JavaScript packages (the topic for this
+post) do use semver and try to stick to it. If you update a patch/minor update
+and it causes issues, most libraries will work with you to fix them and release
+a new minor/patch update.
+
 In the cases of more major updates, libraries or tools will frequently include a
 `codemod`, or a script that can be run that allows for automatic updating to a
 new syntax, name, etc. These codemods are super handy, and I'd highly recommend
 using them! If you have a case where one isn't provided, write your own! Most
 codemods I've seen use [jscodeshift](https://github.com/facebook/jscodeshift)
 under the hood, and I would think most library maintainers would appreciate some
-help getting people to update (I know I do!). Outside of automated tooling,
-you'll want to make sure that you read through any provided documentation like
-changelogs or release notes that can give you insight into things you might need
-to update.
+help getting people to update (I know I do!).
+
+Outside of automated tooling, you'll want to make sure that you read through any
+provided documentation like changelogs or release notes that can give you
+insight into things you might need to update. For example, if you're running
+into issues installing a library like `gulp-sass` or `node-sass` the first place
+you'd want to go is to check their release notes to make sure that the version
+of node you're on is compatible with the version of the library you're trying to
+install. In this specific case, the library depends on some native hooks in
+node, and so if it isn't compatible with your node version it won't work at all.
+So, you'd go to their releases page,
+[like the one for `gulp-sass`](https://github.com/dlmanning/gulp-sass/releases)
+which usually looks to just say it updated to X version of
+[`node-sass`, which has a releases page as well](https://github.com/sass/node-sass/releases/),
+which details what versions of node are supported.
 
 ## Are there times to not update?
 
@@ -176,13 +222,15 @@ seen some of the update pull requests sitting for a long while. I've
 occasionally wondered why that is, since these projects have a great test suite
 that ensure things are still working on the new version of the library, but for
 whatever reason the maintainers have chosen not to merge the pull request. In my
-thinking, there's a few reasons for this:
+thinking, there are a few reasons for this:
 
 - Some feature was removed without a replacement (usually results in tests
   failing though)
 - Want to allow major versions time to "bake" (get bugs out and let others find
   regressions and issues)
 - Want to hold off on dependency updates and batch them
+- Higher priority projects or tasks don't leave time for lower priority projects
+  or updates
 
 If you know of other reasons that people choose not to update, let me know and
 I'll add to this list! I'd love to understand the why behind them, especially in
@@ -199,8 +247,8 @@ in stabilizing the dependencies.
 Outside of the times that you choose not to update for whatever reason (if it
 isn't captured I'd appreciate you sharing it with me!), there are times where
 updating is just plain hard. That's okay. Sometimes the project is so large and
-complex, or there's too many things that need updates, or you simply don't have
-time to test all the things in your application that could potentially be
+complex, or there are too many things that need updates, or you simply don't
+have time to test all the things in your application that could potentially be
 impacted by an update. In all of these cases, there are valid reasons to not
 update or to put it off, but from what I've seen people usually regret those
 decisions-especially in projects that are in active development since they come
@@ -258,13 +306,27 @@ updating 2 or 3 dependencies at a time, even if you eventually have to
 update 44. There are times where you have dependencies that need to be updated
 at the same time in order to ensure you don't run into larger issues. For
 example, storybook and next both use babel under the hood. A while back they
-were updating the babel 7, but they did it at different times and so it was
+were updating to babel 7, but they did it at different times and so it was
 significantly easier to wait until they were both on babel 7 and update our
 projects after that. The alternative would have been to update one and adjust
 configs and things to isolate them to support babel 7 in one case and babel 6 in
 another, which is doable... but work that would then need to be un-done once
 both were on babel 7. So again, there are times where it makes sense to put off
 updating or just not do it.
+
+Another point to making updating easier is to have less dependencies. It might
+seem obvious, but updating is less painful if there is less of it to do! One
+great way to accomplish this is using tools like `gatsby` or `next` which
+provide a lot of the tooling that you need to get up and running for you, and
+hide a huge number of dependencies (and update them for you!) to make it easier
+to work on your actual project. One feature of `gatsby` that I'm loving is
+themes, since they can abstract even more away for you. Since I originally wrote
+this post I spent about a day updating to use the
+`@eggheadio/gatsby-theme-egghead-blog` and got to rip out most of the things I
+had in my blog codebase from the `@eggheadio/gatsby-starter-egghead-blog`, since
+they now exist in the theme! It was actually a pretty fun experience updating
+from the starter to the theme, especially since I hadn't done all that much to
+customize it and could just rip most of it out.
 
 That's all that I've got for now on updating dependencies, feel free to reach
 out if you have other thoughts on the matter as I'd love to hear them! Thanks
