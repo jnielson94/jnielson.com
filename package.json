@@ -43,5 +43,8 @@
     "start": "serve public/",
     "now-build": "npm run build",
     "new-post": "node ./scripts/new-post.js"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
