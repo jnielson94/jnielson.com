@@ -12,10 +12,10 @@ module.exports = {
     description: config.siteDescription,
     keywords: ['Blogger', 'JavaScript', 'React', 'babel', 'webpack'],
     canonicalUrl: config.siteUrl,
-    twitterUrl: config.twitterUrl,
+    twitterUrl: config.github,
     twitterHandle: config.twitterHandle,
     fbAppID: '',
-    githubUrl: config.github,
+    githubUrl: config.twitterUrl,
     githubHandle: config.githubHandle,
     image: config.siteLogo,
     author: {
