@@ -6,7 +6,6 @@
   "alias": ["jnielson.com", "www.jnielson.com"],
   "name": "jnielson.com",
   "version": 2,
-  "regions": ["sfo1", "gru1", "bru1"],
   "builds": [
     {
       "src": "package.json",
