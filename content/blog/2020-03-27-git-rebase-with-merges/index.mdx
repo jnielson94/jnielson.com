@@ -1,0 +1,69 @@
+---
+slug: git-rebase-with-merges
+date: 2020-03-27
+title: 'Git Rebase... with Merges?'
+published: false
+---
+
+Needs `git --version` to be greater than `v2.22.0`
+
+`git rebase -i [some commit]`
+
+```shell
+pick c349469 Add some proper punctuation
+pick 282af3c Add some descriptive text to the readme
+pick 1daf229 Remove sample text and clarify that this is in progress.
+
+# Rebase d5941f3..2587717 onto d5941f3 (3 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+```
+
+`git rebase -i --rebase-merges [COMMIT]`
+
+```shell
+label onto
+
+# Branch jnielson94-jn-quick-fix
+reset onto
+pick c349469 Add some proper punctuation
+label jnielson94-jn-quick-fix
+
+# Branch jnielson94-jn-add-more-text
+reset onto
+pick 282af3c Add some descriptive text to the readme
+label jnielson94-jn-add-more-text
+
+# Branch jnielson94-jn-clarify-text
+reset onto
+merge -C f041aa8 jnielson94-jn-quick-fix # Merge pull request #1 from jnielson94/jn-quick-fix
+merge -C eb0f351 jnielson94-jn-add-more-text # Merge pull request #2 from jnielson94/jn-add-more-text
+label branch-point
+pick 1daf229 Remove sample text and clarify that this is in progress.
+label jnielson94-jn-clarify-text
+
+reset branch-point # Merge pull request #2 from jnielson94/jn-add-more-text
+merge -C 2587717 jnielson94-jn-clarify-text # Merge pull request #3 from jnielson94/jn-clarify-text
+```
