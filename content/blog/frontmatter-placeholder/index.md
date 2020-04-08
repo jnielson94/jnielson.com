@@ -12,4 +12,5 @@ redirects:
   - '/invisible-post-423123'
 ---
 
-This exists to populate GraphQL fields and avoid null errors. It should contain all of the available frontmatter.
+This exists to populate GraphQL fields and avoid null errors. It should contain
+all of the available frontmatter.
