@@ -2,35 +2,35 @@
   "name": "jnielson.com",
   "description": "This is a blog created based off the gatsby-starter-egghead-blog, then updated to use the eggheadio/gatsby-theme-egghead-blog.",
   "version": "1.0.0",
-  "private": "true",
+  "private": true,
   "author": "Jordan Nielson<jnielson94>",
   "repository": "https://github.com/jnielson94/jnielson.com",
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.5",
-    "@eggheadio/gatsby-theme-egghead-blog": "^2.0.1",
-    "date-fns": "^2.9.0",
+    "@eggheadio/gatsby-theme-egghead-blog": "^2.0.2",
+    "date-fns": "^2.11.1",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.19.19",
-    "gatsby-plugin-google-analytics": "^2.1.35",
-    "gatsby-plugin-manifest": "^2.2.41",
-    "gatsby-plugin-sharp": "^2.4.5",
-    "gatsby-remark-images": "^3.1.44",
-    "polished": "^3.4.4",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "gatsby": "^2.20.14",
+    "gatsby-plugin-google-analytics": "^2.2.2",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-sharp": "^2.5.4",
+    "gatsby-remark-images": "^3.2.2",
+    "polished": "^3.5.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "serve": "^11.3.0",
     "slug": "^2.1.1",
     "typography": "^0.16.19"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "babel-preset-gatsby": "^0.2.29",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-gatsby": "^0.3.1",
     "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^2.4.0",
-    "prettier": "^1.19.1"
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "prettier": "^2.0.4"
   },
   "keywords": [
     "gatsby"
@@ -42,7 +42,8 @@
     "dev": "gatsby develop",
     "start": "serve public/",
     "now-build": "npm run build",
-    "new-post": "node ./scripts/new-post.js"
+    "new-post": "node ./scripts/new-post.js",
+    "prettier": "prettier --write src/* content/*"
   },
   "engines": {
     "node": "12.x"
