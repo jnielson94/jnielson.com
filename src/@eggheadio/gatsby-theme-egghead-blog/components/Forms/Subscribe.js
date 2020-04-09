@@ -10,7 +10,7 @@ import { PleaseConfirmIllustration } from '@eggheadio/gatsby-theme-egghead-blog/
 
 const FORM_ID = process.env.CONVERTKIT_SIGNUP_FORM
 const API_KEY = process.env.CONVERTKIT_PUBLIC_KEY
-
+console.log({ FORM_ID, API_KEY })
 const SubscribeSchema = Yup.object().shape({
   email_address: Yup.string()
     .email('Invalid email address')
