@@ -5,9 +5,11 @@ import Paragraph from '@eggheadio/gatsby-theme-egghead-blog/src/components/mdx/P
 import Code from '@eggheadio/gatsby-theme-egghead-blog/src/components/mdx/Code'
 
 export default {
-  h1: props => <Title {...props} />,
-  'li.p': props => <Paragraph style={{ display: 'inline-block' }} {...props} />,
-  p: props => <Paragraph {...props} />,
+  h1: (props) => <Title {...props} />,
+  'li.p': (props) => (
+    <Paragraph style={{ display: 'inline-block' }} {...props} />
+  ),
+  p: (props) => <Paragraph {...props} />,
   code: Code,
-  pre: preProps => <pre {...preProps} />,
+  pre: (preProps) => <pre {...preProps} />,
 }
