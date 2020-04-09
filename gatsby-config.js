@@ -41,6 +41,9 @@ module.exports = {
     },
     {
       resolve: `@eggheadio/gatsby-theme-egghead-blog`,
+      options: {
+        rssFeedTitle: "Jordan Nielson's Blog",
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
