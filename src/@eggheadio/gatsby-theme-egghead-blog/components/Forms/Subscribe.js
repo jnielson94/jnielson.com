@@ -186,6 +186,9 @@ class SignUp extends React.Component {
                       data-element="submit"
                       type="submit"
                       disabled={isSubmitting}
+                      css={css`
+                        color: ${theme.colors.black};
+                      `}
                     >
                       {!isSubmitting && 'Submit'}
                       {isSubmitting && 'Submitting...'}
