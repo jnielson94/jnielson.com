@@ -13,9 +13,16 @@ export default () => {
       <Link
         to="/newsletter"
         activeClassName="active"
-        aria-label="View blog page"
+        aria-label="Join the newsletter"
       >
         Newsletter
+      </Link>
+      <Link
+        to="/typing"
+        activeClassName="active"
+        aria-label="Play a typing game"
+      >
+        Typing Game
       </Link>
 
       <ThemeToggler
