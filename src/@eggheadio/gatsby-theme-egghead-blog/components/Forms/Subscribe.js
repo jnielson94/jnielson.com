@@ -8,13 +8,9 @@ import { bpMaxSM } from '@eggheadio/gatsby-theme-egghead-blog/src/lib/breakpoint
 import Message from '@eggheadio/gatsby-theme-egghead-blog/src/components/ConfirmMessage/Message'
 import { PleaseConfirmIllustration } from '@eggheadio/gatsby-theme-egghead-blog/src/components/ConfirmMessage/Illustrations'
 
-const FORM_ID = process.env.CONVERTKIT_SIGNUP_FORM
-const API_KEY = process.env.CONVERTKIT_PUBLIC_KEY
-console.log({ FORM_ID, API_KEY })
-console.log({
-  node: process.env.NODE_ENV,
-  google: process.env.GOOGLE_ANALYTICS,
-})
+const FORM_ID = '1163892'
+const API_KEY = 'r0Wz2gx1CzL5iuWVu5KsEw'
+
 const SubscribeSchema = Yup.object().shape({
   email_address: Yup.string()
     .email('Invalid email address')
