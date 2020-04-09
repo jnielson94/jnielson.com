@@ -1,7 +1,9 @@
 {
   "env": {
     "GOOGLE_ANALYTICS": "UA-136874328-1",
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "CONVERTKIT_PUBLIC_KEY": "r0Wz2gx1CzL5iuWVu5KsEw",
+    "CONVERTKIT_SIGNUP_FORM": "1163892"
   },
   "alias": ["jnielson.com", "www.jnielson.com"],
   "name": "jnielson.com",
