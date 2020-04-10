@@ -26,8 +26,12 @@ slug: ${slug}
 date: ${date}
 title: "${title}"
 published: false
----`,
-  function(err) {
+---
+
+_Banner image courtesy of undraw.co_
+
+`,
+  function (err) {
     if (err) {
       return console.log(err)
     }
