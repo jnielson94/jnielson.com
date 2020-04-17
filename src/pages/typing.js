@@ -23,7 +23,7 @@ const TypingPage = ({ data: { site, allMdx } }) => {
             }
           `}
         >
-          <iframe src="https://typing.jnielson.com" />
+          <iframe src="https://typing.jln.codes" />
         </div>
       </Container>
     </Layout>
