@@ -36,8 +36,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
         ? postMeta.title
         : seo.siteTitle || "Jordan Nielson's Site"
       const description = postMeta.description || seo.description
-      const NETLIFY_URL =
-        'https://agitated-edison-8b447e.netlify.com/opengraph?'
+      const NETLIFY_URL = 'https://images.jln.codes/opengraph?'
       const image = `${NETLIFY_URL}title=${encodeURIComponent(title)}${
         postMeta.tags ? `&tags=${encodeURIComponent(postMeta.tags)}` : ''
       }` // TODO: Add dynamic author?
