@@ -11,6 +11,7 @@ import Header from '@eggheadio/gatsby-theme-egghead-blog/src/components/Header/'
 import reset from '@eggheadio/gatsby-theme-egghead-blog/src/lib/reset'
 import { fonts } from '@eggheadio/gatsby-theme-egghead-blog/src/lib/typography'
 import Footer from '@eggheadio/gatsby-theme-egghead-blog/src/components/Footer'
+import SEO from './SEO'
 
 const getGlobalStyles = (theme) => {
   return css`
@@ -24,7 +25,7 @@ const getGlobalStyles = (theme) => {
     }
     a {
       color: ${theme.colors.link};
-      text-decoration: none;
+      text-decoration: underline;
       &:hover,
       &:focus {
         color: ${theme.colors.link};
@@ -199,6 +200,7 @@ export default ({
             min-height: 100vh;
           `}
         >
+          <SEO title={title} />
           <Helmet
             title={title}
             defaultTitle={siteTitle}

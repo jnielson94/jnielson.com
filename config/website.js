@@ -1,19 +1,21 @@
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/blog your pathPrefix should be "blog"
   siteTitle: 'Jordan Nielson', // Navigation and Site Title
-  siteTitleAlt: 'The personal blog of Jordan Nielson', // Alternative Site title for SEO
-  siteTitleShort: 'Jordan Nielson - Blog', // short_name for manifest
+  siteTitleAlt: 'The personal site of Jordan Nielson', // Alternative Site title for SEO
+  siteTitleShort: 'Jordan Nielson - site', // short_name for manifest
   siteUrl: 'https://jnielson.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: 'images/logo.png', // Used for SEO and manifest, path to your image you placed in the 'static' folder
-  siteDescription: 'The personal blog of Jordan Nielson',
+  siteDescription: 'The personal site of Jordan Nielson',
   author: 'Jordan Nielson', // Author for schemaORGJSONLD
   organization: 'The Church of Jesus Christ of Latter-day Saints',
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@jnielson94', // Twitter Username
-  ogSiteName: 'Jordan Nielson - Blog', // Facebook Site Name
+  ogSiteName: 'Jordan Nielson - Site', // Facebook Site Name
   ogLanguage: 'en_US',
+  ogImage:
+    'https://images.jln.codes/opengraph?title=Jordan%20Nielson%27s%20Bloghttps://images.jln.codes/opengraph?title=Jordan%20Nielson%27s%20Site',
   googleAnalyticsID: 'UA-136874328-1',
 
   // Manifest and Progress color
@@ -21,8 +23,8 @@ module.exports = {
   backgroundColor: '#fafafa',
 
   // Social component
-  twitterUrl: 'https://twitter.com/jnielson01/',
-  twitterHandle: '@jnielson01',
+  twitterUrl: 'https://twitter.com/jnielson94/',
+  twitterHandle: '@jnielson94',
   github: 'https://github.com/jnielson94/',
   githubHandle: 'jnielson94',
 }
