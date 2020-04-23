@@ -11,6 +11,7 @@ import Header from '@eggheadio/gatsby-theme-egghead-blog/src/components/Header/'
 import reset from '@eggheadio/gatsby-theme-egghead-blog/src/lib/reset'
 import { fonts } from '@eggheadio/gatsby-theme-egghead-blog/src/lib/typography'
 import Footer from '@eggheadio/gatsby-theme-egghead-blog/src/components/Footer'
+import SEO from './SEO'
 
 const getGlobalStyles = (theme) => {
   return css`
@@ -24,7 +25,7 @@ const getGlobalStyles = (theme) => {
     }
     a {
       color: ${theme.colors.link};
-      text-decoration: none;
+      text-decoration: underline;
       &:hover,
       &:focus {
         color: ${theme.colors.link};
@@ -185,6 +186,8 @@ export default ({
 
   const keywords = (frontmatterKeywords || siteKeywords).join(', ')
   const description = frontmatterDescription || siteDescription
+  const hideAuthorDate =
+    (frontmatter && frontmatter.author) || (frontmatter && frontmatter.date)
 
   return (
     <ThemeProvider theme={theme}>
@@ -197,8 +200,13 @@ export default ({
             flex-direction: column;
             width: 100%;
             min-height: 100vh;
+            ${hideAuthorDate &&
+            `h1 + div {
+              display: none;
+            }`}
           `}
         >
+          <SEO title={title} />
           <Helmet
             title={title}
             defaultTitle={siteTitle}
