@@ -186,6 +186,8 @@ export default ({
 
   const keywords = (frontmatterKeywords || siteKeywords).join(', ')
   const description = frontmatterDescription || siteDescription
+  const hideAuthorDate =
+    (frontmatter && frontmatter.author) || (frontmatter && frontmatter.date)
 
   return (
     <ThemeProvider theme={theme}>
@@ -198,6 +200,10 @@ export default ({
             flex-direction: column;
             width: 100%;
             min-height: 100vh;
+            ${hideAuthorDate &&
+            `h1 + div {
+              display: none;
+            }`}
           `}
         >
           <SEO title={title} />
