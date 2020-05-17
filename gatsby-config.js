@@ -52,6 +52,9 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-sitemap`,
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,
