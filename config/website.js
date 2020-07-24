@@ -16,7 +16,6 @@ module.exports = {
   ogLanguage: 'en_US',
   ogImage:
     'https://images.jln.codes/opengraph?title=Jordan%20Nielson%27s%20Bloghttps://images.jln.codes/opengraph?title=Jordan%20Nielson%27s%20Site',
-  googleAnalyticsID: 'UA-136874328-1',
 
   // Manifest and Progress color
   themeColor: '#1ABC9C',
