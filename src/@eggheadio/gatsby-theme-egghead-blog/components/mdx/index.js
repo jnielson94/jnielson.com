@@ -3,6 +3,7 @@ import React from 'react'
 import Title from '@eggheadio/gatsby-theme-egghead-blog/src/components/mdx/Title'
 import Paragraph from '@eggheadio/gatsby-theme-egghead-blog/src/components/mdx/Paragraph'
 import Code from '@eggheadio/gatsby-theme-egghead-blog/src/components/mdx/Code'
+import { CodeSandbox } from 'mdx-embed'
 
 export default {
   h1: (props) => <Title {...props} />,
@@ -12,4 +13,5 @@ export default {
   p: (props) => <Paragraph {...props} />,
   code: Code,
   pre: (preProps) => <pre {...preProps} />,
+  CodeSandbox,
 }
