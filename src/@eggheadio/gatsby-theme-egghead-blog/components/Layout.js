@@ -19,10 +19,6 @@ const getGlobalStyles = (theme) => {
       background: ${theme.colors.bodyBg};
       color: ${theme.colors.text};
     }
-    &::selection {
-      color: ${theme.colors.white};
-      background-color: ${theme.colors.primary};
-    }
     a {
       color: ${theme.colors.link};
       text-decoration: underline;
