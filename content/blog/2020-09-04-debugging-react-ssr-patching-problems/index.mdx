@@ -22,10 +22,11 @@ find/write one and link to it 😊
 
 ## Messed up styles... a Next.js issue?
 
-A prime example of messed up styling was brought up by my coworker, Zack, had
-filed [an issue with Next.js](https://github.com/vercel/next.js/issues/16796)
-about styles not being correct, and then asked in our work slack if anyone
-wanted to dig into it. I looked at
+A prime example of messed up styling was brought up by my coworker, Zack, who
+had filed
+[an issue with Next.js](https://github.com/vercel/next.js/issues/16796) about
+styles not being correct, and then asked in our work slack if anyone wanted to
+dig into it. I looked at
 [his repo that has a reproduction of the issue](https://github.com/SimplyComplexable/next-issue)
 to see what might be happening. I've pulled it into
 [a CodeSandbox example](https://codesandbox.io/s/react-ssr-patching-issue-example-ok3m7)
@@ -36,21 +37,21 @@ to make it easier to see a running version.
 The crux of the issue that was reported is that the styling for the first text
 block, which is only rendered on the client (determined by checking to make sure
 window is defined) isn't correct when the page is server side rendered (it
-should have a blue background).
-
-In order to fix this example there's a few things you can do:
+should have a blue background). If you don't really care why this happens, and
+just want to know what you can do try the following:
 
 - Use semantic elements
 - Try a better client-only render strategy to avoid a hydration mismatch
 - Avoid server rendering DOM elements too eagerly
 
-I'll get more into those solutions later, but first...
+There's more details on these suggestions later in the post, but first more into
+why it happens.
 
 ## Actually a React v16 issue
 
-After digging into it I found that it's a react issue that’s been around a long
+After digging into it I found that it's a React issue that’s been around a long
 time, caused by having server/client mismatches like this. Here's the
-[original react issue](https://github.com/facebook/react/issues/10591), which
+[original React issue](https://github.com/facebook/react/issues/10591), which
 led to an issue about a still-not-finished blog post
 [on the docs site](https://github.com/reactjs/reactjs.org/issues/25). In the
 reproduction, the client side hydration thinks the first div is for the `Test`
@@ -129,7 +130,7 @@ These `div` elements are prime candidates for React to reuse and cause issues
 with, so if you have a component that doesn't actually render anything on the
 server I'd highly recommend avoiding the wrappers being rendered either.
 
-[A comment on the react issue has a great real-world example](https://github.com/facebook/react/issues/10591#issuecomment-334425529):
+[A comment on the React issue has a great real-world example](https://github.com/facebook/react/issues/10591#issuecomment-334425529):
 
 ![IssueScreenshot.png](./IssueScreenshot.png)
 
