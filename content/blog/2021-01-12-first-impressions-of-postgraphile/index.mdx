@@ -112,8 +112,9 @@ harder.
 
 Something I've been wanting to focus more on is testing, especially in the node
 backend code that I write. I haven't seen much focus on testing in the overall
-node GraphQL ecosystem, so it's not really surprising that projects don't set it
-up since there isn't usually documentation showing tests.
+node GraphQL ecosystem, but Postgraphile does have a
+[guide on testing with jest](https://www.graphile.org/postgraphile/testing-jest/)
+available that looks pretty solid.
 
 GraphQL subscriptions weren't needed for this project, but they're talked about
 in the Postgraphile documentation. I'd want to read through that before
@@ -130,8 +131,10 @@ decent "info" logging, but very little "debugging" logs.
 ## Would I start a new project with Postgraphile?
 
 After spending a few months working on a project utilizing Postgraphile I think
-it's a solid pick for a new project. The next project I'm working on is using
-[Blitz.js](https://blitzjs.com/) which utilizes Prisma 2 for the default
-database client, should be fun!
+it's a solid pick for a project where you already have a postgres database and
+want to put a GraphQL server on top of it. The next project I'm working on is
+using [Blitz.js](https://blitzjs.com/) which utilizes Prisma 2 for the default
+database client, and that seems like the option I would usually reach for. It
+should be fun!
 
 _Banner image courtesy of undraw.co_
