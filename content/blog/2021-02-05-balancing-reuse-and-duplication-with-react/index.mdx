@@ -1,44 +1,44 @@
 ---
 slug: balancing-reuse-and-duplication-with-react
-date: 2021-01-15
+date: 2021-02-05
 title: 'Balancing Reuse and Duplication with React'
 published: true
 banner: ./undraw_logic.png
 ---
 
-Working with
-[React Components](https://reactjs.org/docs/components-and-props.html) in a
-project I frequently come across things that are kind of like a component that
-already exists, but not 100% the same. Usually the data or presentation have
-slight differences. When dealing with code, this leads to an interesting problem
-of deciding between adjusting the existing component to be re-used for this
-slightly different purpose or copy/pasting the existing component and ending up
-with 2 similar components instead.
+Working with [Components](https://reactjs.org/docs/components-and-props.html) in
+a React project I usually reach a point where there are pieces that I need to
+add that are similar to components that exist, but not 100% the same. There
+might be slight differences in what data is available or the order it is
+presented. When dealing with code, this leads to an interesting problem of
+deciding between adjusting the existing component to be re-used or copy/pasting
+and making the small changes to end up with 2 similar components instead.
 
 When I say 'adjusting the existing component' that usually involves adding 1 or
 more props and using those props in a bunch of conditional logic to handle the
 two similar situations (the new one and the existing one). For simplicity in
 this article I'll refer to this as `reuse`.
 
-For 'copy/pasting the existing component' that usually means taking what was
+For 'copy/pasting and making small changes' that usually means taking what was
 there and adjusting it to handle the new case and removing pieces that are no
 longer needed. For simplicity in this article I'll refer to this method as
 `duplicate`.
 
-Both of these methods (`reuse` and `duplicate`) involve a decent amount of work,
-but they're usually less than starting from scratch on the piece when there's a
-similar component in the project.
+Both of these methods (`reuse` and `duplicate`) have pros and cons, but I
+generally prefer these methods to starting from scratch if there's an existing
+component to in the project.
 
-Thanks to source control software like Git, it's usually relatively painless to
-switch approaches if I find that I picked the wrong one to start with. The
-biggest downside of pivoting to the other option is the lost time, which is a
+Thanks to source control software like Git, it's relatively painless to switch
+approaches if I find that I picked the wrong one to start with. The biggest
+downside of pivoting to the other option is the lost time, which is a
 significant factor in decision making when projects are on a timeline.
 
 In order to make the decision of which approach to try first (and hopefully
-spend the minimum required time on the feature), I usually dive into the code
-and look around to see what indicators exist in the situation that would make
-one path better or easier than the other. Before I get into those indicators let
-me share an example from a recent project.
+spend the minimum required time on the feature), I dive into the code of the
+existing component and look around to see what indicators exist in the component
+and surrounding code that would make one path better or easier than the other.
+Before I get into those indicators let me share an example from a recent
+project.
 
 ## Advanced Search - An example in `reuse`
 
@@ -85,7 +85,9 @@ impossible. The answer I find to this question is usually one of two options:
 There are always tradeoffs so neither approach is inherently bad. I've found it
 much more difficult to `reuse` the first instance especially when using
 TypeScript, since the typings to allow spreading huge objects I usually can't
-find a way to simplify.
+find a way to simplify
+([Generics](https://www.typescriptlang.org/docs/handbook/generics.html) exist
+but those aren't usually considered "simple").
 
 ### Imports and Sub-components
 
