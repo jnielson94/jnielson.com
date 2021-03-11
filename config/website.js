@@ -15,7 +15,7 @@ module.exports = {
   ogSiteName: 'Jordan Nielson - Site', // Facebook Site Name
   ogLanguage: 'en_US',
   ogImage:
-    'https://images.jln.codes/opengraph?title=Jordan%20Nielson%27s%20Bloghttps://images.jln.codes/opengraph?title=Jordan%20Nielson%27s%20Site',
+    'https://jordans-images.netlify.app/opengraph?title=Jordan%20Nielson%27s%20Site',
 
   // Manifest and Progress color
   themeColor: '#1ABC9C',

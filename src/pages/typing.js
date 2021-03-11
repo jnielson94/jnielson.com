@@ -23,7 +23,10 @@ const TypingPage = ({ data: { site, allMdx } }) => {
             }
           `}
         >
-          <iframe src="https://typing.jln.codes" />
+          <iframe
+            src="https://typing-toddler.netlify.app"
+            title="Typing application"
+          />
         </div>
       </Container>
     </Layout>
