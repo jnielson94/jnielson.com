@@ -4,7 +4,7 @@ import Layout from '@eggheadio/gatsby-theme-egghead-blog/src/components/Layout'
 import Container from '@eggheadio/gatsby-theme-egghead-blog/src/components/Container'
 import SubscribeForm from '../@eggheadio/gatsby-theme-egghead-blog/components/Forms/Subscribe'
 
-const NewsletterPage = ({ data: { site, allMdx } }) => {
+const Newsletter = ({ data: { site, allMdx } }) => {
   return (
     <Layout site={site} title="Join Jordan's Newsletter" noSubscribeForm>
       <Container>
@@ -14,7 +14,7 @@ const NewsletterPage = ({ data: { site, allMdx } }) => {
   )
 }
 
-export default NewsletterPage
+export default Newsletter
 
 export const pageQuery = graphql`
   query {
