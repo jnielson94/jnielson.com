@@ -47,6 +47,6 @@
     "prettier": "prettier --write src/* content/*"
   },
   "engines": {
-    "node": "12.x"
+    "node": "18.x"
   }
 }
