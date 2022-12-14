@@ -1,5 +1,5 @@
 ---
-slug: tips-and-tricks-new-thing
+slug: getting-started-at-a-new-company-tips-and-tricks
 date: '2020-02-26'
 title: 'Tips and Tricks - Starting a new [Thing]'
 

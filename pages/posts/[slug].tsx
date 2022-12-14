@@ -33,7 +33,7 @@ export default function Post({ post, morePosts, preview }: Props) {
           <>
             <article className="mb-32">
               <Head>
-                <title>{post.title} | Jordan Nielson's Blog</title>
+                <title>{post.title} | Jordan Nielson&apos;s Blog</title>
                 <link
                   rel="canonical"
                   href={`https://jnielson.com/posts/${post.slug}`}

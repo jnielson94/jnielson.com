@@ -1,5 +1,5 @@
 ---
-slug: getting-my-feet-wet-with-TypeScript
+slug: getting-my-feet-wet-with-typescript
 date: '2020-02-28'
 title: 'Getting my feet wet with TypeScript'
 
