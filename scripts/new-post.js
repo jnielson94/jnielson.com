@@ -13,19 +13,19 @@ if (publishDate && publishDate.length !== 10) {
 const date = publishDate
   ? publishDate
   : dateFns.format(new Date(), 'yyyy-MM-dd')
-const dir = `./content/blog/${date}-${slug}`
-if (!fs.existsSync(dir)) {
-  fs.mkdirSync(dir)
+const imageDir = `./public/assets/blog/${slug}`
+if (!fs.existsSync(imageDir)) {
+  fs.mkdirSync(imageDir)
 } else {
   throw 'That post already exists!'
 }
 fs.writeFileSync(
-  `${dir}/index.mdx`,
+  `./_posts/${slug}.md`,
   `---
 slug: ${slug}
 date: ${date}
 title: "${title}"
-published: false
+coverImage: '/assets/blog/${slug}/cover.jpg'
 ---
 
 _Banner image courtesy of undraw.co_
