@@ -23,7 +23,7 @@
     "@types/react-dom": "^18.0.11",
     "autoprefixer": "^10.4.7",
     "date-fns": "^2.29.3",
-    "eslint": "8.34.0",
+    "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
     "postcss": "^8.4.21",
     "slug": "^8.2.2",
