@@ -38,7 +38,7 @@ const Meta = () => {
       />
       <meta
         property="og:image"
-        content={`${opengraphImageURLBase}?title=Jordan%20Nielson's%20Site`}
+        content={`${opengraphImageURLBase}title=Jordan%20Nielson's%20Site`}
       />
     </Head>
   )
