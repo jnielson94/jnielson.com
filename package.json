@@ -25,7 +25,7 @@
     "date-fns": "^2.30.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.2",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.30",
     "slug": "^8.2.3",
     "tailwindcss": "^3.3.3"
   }
