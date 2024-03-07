@@ -18,7 +18,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@types/node": "^20.11.22",
+    "@types/node": "^20.11.25",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.18",
