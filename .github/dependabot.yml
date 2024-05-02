@@ -18,3 +18,7 @@ updates:
       types:
         patterns:
           - "@types/*"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
