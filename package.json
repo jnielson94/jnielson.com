@@ -12,7 +12,7 @@
     "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "typescript": "^5.4.5"
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
+    "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
     "date-fns": "^3.6.0",
     "eslint": "^8.57.0",
